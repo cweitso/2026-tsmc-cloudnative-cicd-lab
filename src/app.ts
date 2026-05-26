@@ -21,5 +21,3 @@ export function buildApp(options: FastifyServerOptions = {}) {
 
   return app;
 }
-
-const port: number = 'not-a-number';
