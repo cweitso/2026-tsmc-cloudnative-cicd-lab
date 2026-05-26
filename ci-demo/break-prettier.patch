@@ -1,0 +1,8 @@
+--- a/src/app.ts
++++ b/src/app.ts
+@@ -1,4 +1,4 @@
+-import Fastify, { FastifyServerOptions } from 'fastify';
++import Fastify, { FastifyServerOptions } from "fastify"
+
+ export function buildApp(options: FastifyServerOptions = {}) {
+   const app = Fastify({

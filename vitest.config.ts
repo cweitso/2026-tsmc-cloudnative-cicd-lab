@@ -1,13 +1,12 @@
-import type { TestUserConfig, ViteUserConfig } from 'vitest/config';
+import { defineConfig } from 'vitest/config';
 
-type VitestConfig = ViteUserConfig & {
-  test?: TestUserConfig;
-};
-
-const config: VitestConfig = {
+export default defineConfig({
   test: {
-    exclude: ['dist/**', 'node_modules/**']
+    exclude: ['dist/**', 'node_modules/**'],
+    coverage: {
+      provider: 'v8',
+      include: ['src/**/*.ts'],
+      exclude: ['src/server.ts'] // server bootstrap 不納入覆蓋率
+    }
   }
-};
-
-export default config;
+});

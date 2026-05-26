@@ -1,0 +1,9 @@
+--- a/src/app.ts
++++ b/src/app.ts
+@@ -21,3 +21,6 @@ export function buildApp(options: FastifyServerOptions = {}) {
+
+   return app;
+ }
++
++// ❌ 故意的型別錯誤 — 觸發 typecheck 失敗
++const port: number = 'not-a-number';
